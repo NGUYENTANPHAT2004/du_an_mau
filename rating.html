@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Rating System</title>
+    <style>
+        .rating {
+            display: inline-block;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            background-color: #ddd;
+            display: inline-block;
+            position: relative;
+        }
+
+        .rating label:before {
+            content: "\2605"; /* Ký tự sao Unicode */
+            font-size: 24px;
+            color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .rating label:hover:before,
+        .rating label:hover ~ label:before {
+            color: #fdd;
+        }
+
+        .rating input:checked ~ label:before,
+        .rating input:checked ~ label:hover ~ label:before {
+            color: #f90;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rating">
+        <input type="radio" id="star5" name="rating" value="1">
+        <label for="star5"></label>
+        <input type="radio" id="star4" name="rating" value="2">
+        <label for="star4"></label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3"></label>
+        <input type="radio" id="star2" name="rating" value="4">
+        <label for="star2"></label>
+        <input type="radio" id="star1" name="rating" value="5">
+        <label for="star1"></label>
+    </div>
+
+</body>
+</html>
